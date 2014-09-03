@@ -10,7 +10,7 @@ source ${DIR}/env.sh
 # Change the report name if you like:
 LCOV_INFO=Coverage.info
 
-XCODECOVERAGE_PATH="${SRCROOT}/XcodeCoverage"
+XCODECOVERAGE_PATH="${SRCROOT}/../XcodeCoverage"
 LCOV_PATH="${XCODECOVERAGE_PATH}/lcov-1.10/bin"
 OBJ_DIR=${OBJECT_FILE_DIR_normal}/${CURRENT_ARCH}
 
