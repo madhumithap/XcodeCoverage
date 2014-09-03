@@ -8,4 +8,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source ${DIR}/envcov.sh
 
-LCOV --zerocounters -d "${OBJ_DIR}"
+if [ -d "${OBJ_DIR}" ]; then
+	LCOV --zerocounters -d "${OBJ_DIR}"
+fi
