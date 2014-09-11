@@ -31,15 +31,19 @@ gather_coverage()
 
 exclude_data()
 {
-    LCOV --remove ${LCOV_INFO} "Developer/SDKs/*" -d "${OBJ_DIR}" -o ${LCOV_INFO}
-    LCOV --remove ${LCOV_INFO} "main.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
-    # Remove other patterns here...
+    	LCOV --remove ${LCOV_INFO} "Developer/SDKs/*" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+    	LCOV --remove ${LCOV_INFO} "UIImage+ImageEffects.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+	LCOV --remove ${LCOV_INFO} "SDShopNavigationController.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+	LCOV --remove ${LCOV_INFO} "SDPhotoTransitionAnimation.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+	LCOV --remove ${LCOV_INFO} "SDSideMenuPopAnimator.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+	LCOV --remove ${LCOV_INFO} "SDPushSegueWithoutAnimation.m" -d "${OBJ_DIR}" -o ${LCOV_INFO}
+	# Remove other patterns here...
 }
 
 generate_report()
 {
     "${LCOV_PATH}/genhtml" --output-directory . ${LCOV_INFO}
-     # open index.html
+     open index.html
 }
 
 remove_old_report
